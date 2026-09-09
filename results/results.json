@@ -1,0 +1,123 @@
+{
+  "baseline": {
+    "n": 2251,
+    "auc_roc": 0.6952919113549413,
+    "auc_pr": 0.49829047149848993,
+    "dummy_roc": 0.5,
+    "dummy_pr": 0.3333333333333333,
+    "improve_roc": 39.058382270988254,
+    "improve_pr": 49.48714144954698,
+    "importance": {
+      "pr_hour": 7.8480490908675264,
+      "pr_day": 8.624116705137347,
+      "pr_description": 9.724486183699508,
+      "pr_commits": 8.641908016661333,
+      "pr_changed_lines": 9.009002373567009,
+      "pr_changed_files": 4.506659204396337,
+      "contributor_pulls": 8.690841843708307,
+      "contributor_open_pulls": 3.3695356303846324,
+      "contributor_acceptance_rate": 13.7632417799289,
+      "contributor_median_latency": 8.793263225164388,
+      "project_pulls": 3.763943901131281,
+      "project_open_pulls": 3.9912053499993556,
+      "project_maintainers": 2.5621529447591938,
+      "project_community": 2.4136702272819353,
+      "project_median_latency": 4.29792352331294
+    }
+  },
+  "split_10": {
+    "fraction": 0.1,
+    "contributors_split": 21,
+    "contributors_eligible": 212,
+    "auc_roc": 0.6912341024951282,
+    "auc_roc_sd": 0.004999548620681742,
+    "auc_pr": 0.4956192843805657,
+    "auc_pr_sd": 0.006203258245827229,
+    "importance": {
+      "pr_hour": 7.76647346069375,
+      "pr_day": 8.351768502592243,
+      "pr_description": 9.862193511722092,
+      "pr_commits": 8.819502605579972,
+      "pr_changed_lines": 9.01043447332746,
+      "pr_changed_files": 4.573857273349983,
+      "contributor_pulls": 7.75112391258183,
+      "contributor_open_pulls": 3.4404018198224695,
+      "contributor_acceptance_rate": 14.22050986624692,
+      "contributor_median_latency": 8.97048523871409,
+      "project_pulls": 3.8639013670248046,
+      "project_open_pulls": 4.084660073497716,
+      "project_maintainers": 2.3108661597785796,
+      "project_community": 2.7595686353238293,
+      "project_median_latency": 4.21425309974426
+    },
+    "delta_roc": -0.004057808859813106,
+    "delta_pr": -0.0026711871179242452
+  },
+  "split_20": {
+    "fraction": 0.2,
+    "contributors_split": 42,
+    "contributors_eligible": 212,
+    "auc_roc": 0.6920035097557888,
+    "auc_roc_sd": 0.0015854644608772814,
+    "auc_pr": 0.49641687719712185,
+    "auc_pr_sd": 0.0022343814209672443,
+    "importance": {
+      "pr_hour": 7.6340004598129,
+      "pr_day": 8.299664427362238,
+      "pr_description": 9.874605040954048,
+      "pr_commits": 8.875708436598048,
+      "pr_changed_lines": 9.084834673721584,
+      "pr_changed_files": 4.674737662825687,
+      "contributor_pulls": 7.812676295829437,
+      "contributor_open_pulls": 3.5486812926931353,
+      "contributor_acceptance_rate": 13.811293126683688,
+      "contributor_median_latency": 8.850958656349237,
+      "project_pulls": 3.758335000623573,
+      "project_open_pulls": 4.229221876987777,
+      "project_maintainers": 2.401113365198283,
+      "project_community": 2.8743348067510506,
+      "project_median_latency": 4.269834877609313
+    },
+    "delta_roc": -0.0032884015991524462,
+    "delta_pr": -0.0018735943013680756
+  },
+  "split_40": {
+    "fraction": 0.4,
+    "contributors_split": 85,
+    "contributors_eligible": 212,
+    "auc_roc": 0.6854919192992431,
+    "auc_roc_sd": 0.0029833545957815353,
+    "auc_pr": 0.4887397388343366,
+    "auc_pr_sd": 0.0027628460715433526,
+    "importance": {
+      "pr_hour": 7.287633784975233,
+      "pr_day": 8.353160284705137,
+      "pr_description": 10.094135463653139,
+      "pr_commits": 8.97393657281351,
+      "pr_changed_lines": 9.308485196572443,
+      "pr_changed_files": 4.648209373818575,
+      "contributor_pulls": 7.471368358268475,
+      "contributor_open_pulls": 3.2648931133077537,
+      "contributor_acceptance_rate": 13.733638773426234,
+      "contributor_median_latency": 9.082061613613206,
+      "project_pulls": 4.009424202044518,
+      "project_open_pulls": 4.23548581780205,
+      "project_maintainers": 2.346604292772881,
+      "project_community": 2.9313329722349164,
+      "project_median_latency": 4.259630179991928
+    },
+    "delta_roc": -0.009799992055698148,
+    "delta_pr": -0.00955073266415335
+  },
+  "ablation_no_history": {
+    "n": 2251,
+    "auc_roc": 0.6430085642524452,
+    "auc_pr": 0.4542752355778936,
+    "dummy_roc": 0.5,
+    "dummy_pr": 0.3333333333333333
+  },
+  "ablation_delta": {
+    "auc_roc": -0.05228334710249605,
+    "auc_pr": -0.04401523592059631
+  }
+}

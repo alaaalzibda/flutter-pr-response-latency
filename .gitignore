@@ -1,0 +1,13 @@
+# secrets - never commit
+github_token.txt
+.github_token
+*.token
+
+# collected data and caches (regenerate with scripts/collect_*.py)
+data/
+__pycache__/
+.ipynb_checkpoints/
+
+# noise
+.DS_Store
+*.bak
