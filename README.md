@@ -37,6 +37,12 @@ This repository measures it.
 5. Split a share of contributors into two artificial accounts, rebuilt the history
    features under those split identities, retrained, and compared.
 
+The model uses 15 features across the project, contributor and pull request
+dimensions — the same set the paper's maintainer-side model uses. The six
+review-process features in the paper's Table 2 are marked contributor-only, because
+they describe events that occur after the maintainer has already responded; one of
+them *is* the maintainer's first response latency.
+
 The target variable never changes between runs. The only difference is the model's
 view of who wrote what.
 
@@ -76,7 +82,9 @@ independent confirmation on data the authors never saw.
 | 20% | 0.692 | −0.003 | 0.496 | −0.002 |
 | 40% | 0.685 | −0.010 | 0.489 | −0.010 |
 
-Three random repetitions per level; standard deviations 0.002–0.006.
+Three random repetitions per level; standard deviations 0.002–0.006. The 10% and 20%
+changes sit inside that noise, so the only level that clearly separates from the
+baseline is 40%.
 
 The newcomer gap barely moves either: **+108.7 h** at baseline versus **+108.1 h**
 with 40% of contributors split.
@@ -102,8 +110,8 @@ across two accounts costs about 1.4% of relative AUC.
 
 The reason is arithmetic rather than luck. Splitting one contributor's PRs across two
 accounts creates only one extra zero-history pull request per account; it does not
-erase the rest. The share of rows with no history rises from 11.4% to 13.1% even when
-40% of contributors are split.
+erase the rest. The share of PRs with no contributor history rises from 11.4% to
+13.1% even when 40% of contributors are split.
 
 So the honest revision to the critique is this: the authors were right to leave it in
 future work, and a reader should treat their newcomer finding as solid rather than
@@ -121,14 +129,17 @@ Stated plainly, because they matter for how far these numbers travel.
   merges and GitHub's `authorAssociation` labels most Flutter reviewers as
   `CONTRIBUTOR`.
 - **First response detection.** Comments and reviews only, not the full event timeline,
-  so 46% of PRs carry a label. The paper's broader event definition covers more.
-- **15 features, not 21.** The six review-process features belong to the
-  contributor-side model, not the maintainer-side one replicated here.
+  so only 46% of PRs have a detectable first response and can be used. The paper's
+  broader event definition covers more. The risk is not sample size but selection: PRs
+  that attract a written response may not be representative of all PRs.
 - **`pr_commits`** uses the PR's total commit count rather than commits at submission time.
 - **One project.** Flutter only, so nothing here generalises to the other 19.
 - **Split model.** Each selected contributor's PRs are dealt randomly between two
   accounts. A real second account might instead take over at a point in time. Random
   dealing fragments history more aggressively, so this is the harsher test.
+- **Unvalidated thresholds.** The 3-review maintainer rule, the 15% warm-up and the
+  5-PR definition of an experienced contributor are judgement calls, not results of a
+  sensitivity check.
 
 ## Running it
 
