@@ -128,10 +128,20 @@ Stated plainly, because they matter for how far these numbers travel.
   merge and close actors plus frequent reviewers, because Flutter's bot performs most
   merges and GitHub's `authorAssociation` labels most Flutter reviewers as
   `CONTRIBUTOR`.
+- **One model, not seven.** The paper compares CatBoost against Random Forest, KNN,
+  Logistic Regression, Naive Bayes, a neural network and SVM. Since the paper already
+  establishes that CatBoost ranks alone in the top Scott-Knott group, only CatBoost is
+  perturbed here. Whether a linear model degrades further under identity error is an
+  open question this study does not answer.
 - **First response detection.** Comments and reviews only, not the full event timeline,
   so only 46% of PRs have a detectable first response and can be used. The paper's
-  broader event definition covers more. The risk is not sample size but selection: PRs
-  that attract a written response may not be representative of all PRs.
+  broader event definition covers more. The 3,110 excluded PRs are less alarming than
+  that share suggests: 1,881 (60%) were closed without ever being merged, 249 (8%) are
+  still open, and of the 980 that merged, 944 (96%) were authored by someone with write
+  access — a maintainer's own pull request, where there is no contributor waiting for a
+  response to measure. The genuinely unexplained residue is about 36 PRs. The remaining
+  risk is selection rather than sample size: PRs that attract a written response may
+  differ from those a maintainer answered with a label or an assignment.
 - **`pr_commits`** uses the PR's total commit count rather than commits at submission time.
 - **One project.** Flutter only, so nothing here generalises to the other 19.
 - **Split model.** Each selected contributor's PRs are dealt randomly between two
